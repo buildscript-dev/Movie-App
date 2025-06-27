@@ -7,10 +7,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -53,7 +56,8 @@ fun MovieScreen(viewModel: MovieViewModel = viewModel()) {
     var search by remember { mutableStateOf("") }
     val movieList by viewModel.movies.collectAsState()
 
-    Column(modifier = Modifier.padding(16.dp)) {
+    Column(modifier = Modifier.padding(16.dp)
+        .padding(WindowInsets.systemBars.asPaddingValues())) {
         OutlinedTextField(
             value = search,
             onValueChange = {
@@ -63,6 +67,13 @@ fun MovieScreen(viewModel: MovieViewModel = viewModel()) {
             label = { Text("Search movies...") },
             modifier = Modifier.fillMaxWidth()
         )
+
+        Text(
+            text = "Trending Movies 🎬",
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(bottom = 16.dp)
+        )
+
 
         Spacer(modifier = Modifier.height(16.dp))
 
