@@ -49,16 +49,22 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+// Compose
     implementation(libs.ui)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.activity.compose.v182)
+// Retrofit & Networking
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
-    implementation(libs.coil.compose)
-    implementation(libs.coil.network.okhttp)
+// Coroutines
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
+// Lifecycle & StateFlow
     implementation(libs.androidx.lifecycle.runtime.ktx.v270)
+    //Coil
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
